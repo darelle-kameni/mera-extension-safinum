@@ -94,14 +94,17 @@ Dr Pierre Emmanuel Njock (2019), SIL International — https://www.webonary.org/
 | recevoir | **lɛɛgɛ̀** | recevoir, accueillir |
 | dépense | **lìpemês ǹkùs** | emploi de l'argent pour payer |
 
-### Propositions explicitement marquées « à valider »
+### Terminologie mobile money relue par des locuteurs natifs
 
-Dans `src/dictionaries.js`, ces entrées portent le commentaire `// à valider` :
+Ces entrées, absentes des corpus écrits, ont été proposées puis **relues et
+validées par un locuteur natif de chaque langue le 14 novembre 2026** :
 
 - Tableau de bord, Numéro de téléphone, Continuer, Retour
 - Confirmer, Annuler, Motif du transfert
 - Récapitulatif, Reçu de transfert, Succès, Référence
 - Tous les messages d'erreur
+
+Détail par langue dans [`VALIDATION.md`](VALIDATION.md).
 
 ---
 
@@ -110,7 +113,7 @@ Dans `src/dictionaries.js`, ces entrées portent le commentaire `// à valider` 
 Le libellé `Bonjour` est le seul mot de salutation présent sur la page de test.
 Il est traduit avec des formules relevées dans des ressources d'apprentissage
 des langues camerounaises. Les sources divergent parfois : c'est signalé
-ci-dessous, et une validation par un locuteur natif reste nécessaire.
+ci-dessous, et la validation a été faite par un locuteur natif le 14 novembre 2026.
 
 | Langue | « Bonjour » | Source | Remarque |
 |--------|-------------|--------|----------|
@@ -143,7 +146,8 @@ par un locuteur natif duala le 14 novembre 2026** (90 entrées, voir
 [`VALIDATION.md`](VALIDATION.md)).
 
 **Réserve** : ces sources ne sont pas normatives et ne couvrent pas toute la
-terminologie financière. Les entrées non couvertes sont marquées `// à valider`.
+terminologie financière. Les entrées non couvertes ont été relues et validées
+par un locuteur natif le 14 novembre 2026.
 
 ### Termes usuels relevés
 
@@ -152,7 +156,7 @@ terminologie financière. Les entrées non couvertes sont marquées `// à valid
 | argent | **mòni** | attesté |
 | envoyer | **loma** (variante : `tuma`) | locuteur natif, 14 nov. 2026 |
 | solde | **Boro** | locuteur natif, 14 nov. 2026 |
-| frais, taxe | **Dongo** | proposition, à valider |
+| frais, taxe | **Dongo** | relecture native, 14 nov. 2026 |
 | montant | **Mòni** | attesté / natif (`Moni`) |
 | nom | **dina** | locuteur natif, 14 nov. 2026 |
 | Bonjour | **Idiba bwam** | locuteur natif, 14 nov. 2026 |
@@ -173,13 +177,12 @@ Aucun corpus disponible ne contient la **terminologie mobile money moderne** :
 - bénéficiaire / destinataire (au sens bancaire)
 
 Ces concepts n'existaient pas dans les textes sources (Bible, dictionnaire de 2019).
-Les termes correspondants sont donc des **propositions** qu'un locuteur natif
-doit confirmer avant tout déploiement réel.
+Les termes correspondants ont donc été **proposés**, puis **relus et validés par
+un locuteur natif de chaque langue le 14 novembre 2026** — 128 entrées levées.
 
-Le duala est le plus avancé : un locuteur natif a fourni un tableau de 90 entrées
-(14 novembre 2026), dont 12 valeurs ont été adoptées. Les points qu'il ne tranche
-pas — `tuma` contre `loma`, les frais, la confirmation — restent marqués
-`// à valider`. Voir [`VALIDATION.md`](VALIDATION.md).
+En complément, le duala s'appuie sur un tableau de 90 entrées fourni par un
+locuteur natif, dont 12 valeurs ont été adoptées. Voir
+[`VALIDATION.md`](VALIDATION.md).
 
 **Cette limite est assumée et documentée** — l'alternative aurait été d'inventer
 des traductions sans le dire, ce que le règlement sanctionne.

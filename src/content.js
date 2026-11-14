@@ -18,7 +18,7 @@
   // Anti double-injection : le popup peut réinjecter les scripts en secours.
   // Sans ce garde, deux instances se disputent les mêmes nœuds et l'une
   // restaure une langue déjà traduite (ex. salutation figée en basaa).
-  const VERSION = "1.2.4";
+  const VERSION = "1.3.0";
   // Déjà chargé (même version) ou version obsolète sur la page : dans les deux
   // cas on ne crée pas une seconde instance. Le popup recharge la page si la
   // version diffère, ce qui recharge le script déclaré dans le manifest.

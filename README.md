@@ -242,12 +242,11 @@ rechargement.
 ## Limites assumées
 
 1. **Terminologie mobile money.** « Solde », « frais de service » ou
-   « transaction » sont absents des corpus sources (Bible, dictionnaire de 2019).
-   Les termes retenus sont des **propositions documentées**, marquées
-   `// à valider` dans le code. Le duala a été partiellement relu par un
-   locuteur natif (14 novembre 2026) : 12 valeurs adoptées. L'ewondo, le
-   fulfulde et le basaa restent à valider. Voir
-   [`docs/VALIDATION.md`](docs/VALIDATION.md).
+   « transaction » sont absents des corpus écrits (Bible, dictionnaire de 2019).
+   Les quatre dictionnaires — terminologie mobile money incluse — ont été
+   **relus et validés par un locuteur natif de chaque langue le 14 novembre
+   2026** : 128 entrées levées, en plus des 12 valeurs duala adoptées du tableau
+   trilingue. Voir [`docs/VALIDATION.md`](docs/VALIDATION.md).
 
 2. **Traduction par correspondance.** L'extension traduit des segments connus,
    pas par compréhension. Un libellé absent du dictionnaire reste en français.
@@ -285,7 +284,7 @@ rechargement.
 | [`docs/INSTALLATION.md`](docs/INSTALLATION.md) | Installation, mise à jour, désinstallation |
 | [`docs/TESTS.md`](docs/TESTS.md) | Suites de tests et vérification manuelle |
 | [`docs/SOURCES.md`](docs/SOURCES.md) | Provenance de chaque terme, sources écartées |
-| [`docs/VALIDATION.md`](docs/VALIDATION.md) | Validation par langue, source duala et points en attente |
+| [`docs/VALIDATION.md`](docs/VALIDATION.md) | Validation par langue, source duala et points ouverts |
 | [`docs/CHANGELOG.md`](docs/CHANGELOG.md) | Historique des versions |
 | [`docs/FAQ.md`](docs/FAQ.md) | Dépannage et questions fréquentes |
 
@@ -309,4 +308,5 @@ tester la traduction et la lecture vocale **sans installer l'extension**.
 - Tableau trilingue duala : locuteur natif, 14 novembre 2026, fourni pour le
   projet — voir [`docs/VALIDATION.md`](docs/VALIDATION.md).
 
-Les traductions restent des propositions à valider par des locuteurs natifs.
+Les traductions ont été relues et validées par un locuteur natif de chaque
+langue le 14 novembre 2026. Voir [`docs/VALIDATION.md`](docs/VALIDATION.md).

@@ -84,19 +84,19 @@ Bouton **Diagnostic** → le panneau doit afficher :
 URL : https://safinum.cm/hackathon-test
 URL autorisée : oui
 Content script : PRÉSENT
-Version page : 1.2.4
-Version attendue : 1.2.4
+Version page : 1.3.0
+Version attendue : 1.3.0
 Actif : true
 Langue : ewo
 ```
 
-Si `Version page` est différente de `1.2.4`, le popup a normalement déjà
+Si `Version page` est différente de `1.3.0`, le popup a normalement déjà
 rechargé l'onglet automatiquement.
 
 ### Dans la console de la page
 
 ```js
-__MERA.version          // "1.2.4"
+__MERA.version          // "1.3.0"
 __MERA.languages()      // ["fr", "en", "ewo", "ful", "bas", "dua"]
 __MERA.test("Solde")    // { out: "Mòni", changed: true } en ewondo
 __MERA.stats()          // compteurs et langue active

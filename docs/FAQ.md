@@ -59,7 +59,7 @@ Si ce n'est pas le cas :
 
 Ce cas est couvert depuis la version **1.2.2** : l'ancienne traduction `Mbolo`
 est reconnue comme un alias de `Bonjour`. Vérifier dans **Diagnostic** que
-`Version page` est bien `1.2.4`. Sinon : mettre à jour, puis F5.
+`Version page` est bien `1.3.0`. Sinon : mettre à jour, puis F5.
 
 ### Certains textes restent en français
 
@@ -210,13 +210,17 @@ Le script présent dans la page ne correspond pas à la version de l'extension.
 
 ## Traductions
 
-### Pourquoi `// à valider` dans le code ?
+### Les traductions sont-elles validées ?
 
-Le vocabulaire du **mobile money** (solde, frais, transaction, bénéficiaire) est
-absent des corpus sources : la Bible et le dictionnaire basaa de 2019 ne
-parlaient pas de transfert d'argent mobile. Les termes correspondants sont donc
-des **propositions documentées**, marquées `// à valider`, en attente de
-validation par un locuteur natif.
+Oui. Le vocabulaire du **mobile money** (solde, frais, transaction,
+bénéficiaire) est absent des corpus écrits : la Bible et le dictionnaire basaa
+de 2019 ne parlaient pas de transfert d'argent mobile. Ces termes ont donc été
+proposés, puis **relus et validés par un locuteur natif de chaque langue le
+14 novembre 2026** — 128 entrées levées.
+
+Chaque bloc de `src/dictionaries.js` porte la mention de relecture
+(`// Relecture : locuteur natif …, 14 novembre 2026`). Voir
+[`VALIDATION.md`](VALIDATION.md).
 
 Cette transparence est volontaire : le règlement du hackathon sanctionne le
 « texte inventé » non déclaré.

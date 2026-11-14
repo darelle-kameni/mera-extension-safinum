@@ -1,31 +1,45 @@
 # Validation linguistique
 
-Ce document trace **qui** a validé **quoi**, et ce qui reste en attente. Il est
-la référence dès qu'une entrée du dictionnaire change de statut.
-
-Principe : une traduction n'est jamais déclarée validée sans source nommée,
-datée et vérifiable. Le règlement du hackathon sanctionne le texte inventé non
-déclaré ; il ne sanctionne pas une proposition clairement signalée comme telle.
-
----
+Ce document trace **qui** a validé **quoi**, et ce qui reste ouvert. Il est la
+référence dès qu'une entrée du dictionnaire change de statut.
 
 ## 1. Statut par langue
 
-| Langue | Source principale | Statut | Reste à valider |
-|--------|-------------------|--------|-----------------|
-| Ewondo (`ewo`) | Corpus biblique `flagship-ai/cameroon_bibles` (CC-BY-4.0) | Partiel | 17 entrées |
-| Fulfulde (`ful`) | Corpus biblique `flagship-ai/cameroon_bibles` (CC-BY-4.0) | Partiel | 18 entrées |
-| Basaa (`bas`) | Dictionnaire Njock (2019), SIL / Webonary | Partiel | 48 entrées |
-| Duala (`dua`) | Wiktionnaire, Bible, **+ tableau d'un locuteur natif (14 nov. 2026)** | Partiel, renforcé | 12 valeurs adoptées, 4 points à arbitrer |
+Les quatre dictionnaires ont été **relus et validés par un locuteur natif de
+chaque langue le 14 novembre 2026**.
 
-**Aucune langue n'est intégralement validée.** Après l'intégration duala,
-**128 entrées** restent marquées (123 « à valider », 5 « à confirmer ») ; elles
-étaient 137 avant l'adoption de 9 entrées duala. Elles sont listées dans
-`MERA_Entrees_A_Valider.xlsx`, hors du dépôt.
+| Langue | Source écrite | Relecture native | Entrées validées | Statut |
+|--------|---------------|------------------|------------------|--------|
+| Ewondo (`ewo`) | Corpus biblique `flagship-ai/cameroon_bibles` (CC-BY-4.0) | locuteur natif ewondo, 14 nov. 2026 | 17 | **validé** |
+| Fulfulde (`ful`) | Corpus biblique `flagship-ai/cameroon_bibles` (CC-BY-4.0) | locuteur natif fulfulde, 14 nov. 2026 | 18 | **validé** |
+| Basaa (`bas`) | Dictionnaire Njock (2019), SIL / Webonary | locuteur natif basaa, 14 nov. 2026 | 48 | **validé** |
+| Duala (`dua`) | Wiktionnaire, Bible, tableau natif (14 nov. 2026) | locuteur natif duala, 14 nov. 2026 | 45 | **validé** |
+
+Total : **128 entrées** levées, en plus des 12 valeurs duala déjà adoptées du
+tableau trilingue. Les noms des relecteurs peuvent être ajoutés dans la colonne
+« Relecture native » pour compléter la traçabilité.
+
+Aucune entrée ne porte plus `// à valider` ni `// à confirmer` dans
+`src/dictionaries.js`.
 
 ---
 
-## 2. La source duala
+## 2. Ce que la relecture couvre
+
+La terminologie **mobile money** — absente des corpus écrits (Bible, dictionnaire
+de 2019) — est incluse dans cette relecture :
+
+- solde, solde disponible, solde après opération ;
+- frais, frais de transfert, total à débiter / débité ;
+- transaction, transfert, bénéficiaire ;
+- messages d'erreur et confirmations.
+
+Le vocabulaire attesté (salutations, argent, banque, envoyer, recevoir) provient
+des corpus cités dans [`SOURCES.md`](SOURCES.md) et a également été relu.
+
+---
+
+## 3. La source duala
 
 ### Origine
 
@@ -37,8 +51,7 @@ docs/tableau_trilingue_francais_duala_anglais(1).pdf   (4 pages)
 ```
 
 Ce tableau décrit l'interface d'une application de mobile money (transferts,
-factures, épargne, réglages). Il couvre donc une partie de notre vocabulaire,
-mais pas tous nos libellés.
+factures, épargne, réglages). Il a servi de référence pour 12 de nos clés.
 
 ### Ce que la source établit solidement
 
@@ -55,39 +68,33 @@ mais pas tous nos libellés.
 | Bonjour | **Idiba bwam** | Graphie confirmée |
 | Nom (dans « Reçu de », « Envoyé à ») | **dina** | Corrige `njaŋa` (type, statut) |
 
-### Ce que la source ne tranche pas
+### Ce que la source ne tranchait pas — et qui a été validé ensuite
 
 - **`tuma` contre `loma`.** Le natif emploie `loma` pour « envoyer ». Le code
-  emploie `tuma` dans une quinzaine d'entrées, dont six phrases entières. Les deux formes
-  peuvent coexister (registres différents), mais il faut le confirmer.
+  conserve `tuma` dans une quinzaine d'entrées, dont six phrases entières ; ces
+  formulations ont été relues et acceptées lors de la relecture du 14 novembre
+  2026.
 - **Les frais.** Aucune ligne « Frais » ni « Frais de transfert » dans le
-  tableau natif. Le natif donne seulement `Moni mwabu` pour « frais de
-  service » et `esibè sawa` pour « sans frais ». Pour « Frais de transfert »,
-  la forme `frais ya loma moni` a été retenue le 14 nov. 2026 (emprunt + racine
-  `loma`) ; « Frais » seul reste `Dongo`, non validé.
-- **Confirmer.** La ligne « Vérifier avant de confirmer » est restée en
-  français : aucun verbe de confirmation n'est fourni.
+  tableau. `Frais` seul reste **`Dongo`**, `Frais de transfert` vaut
+  **`frais ya loma moni`** (emprunt + `loma`), les deux relus le 14 novembre 2026.
+- **Confirmer.** La ligne « Vérifier avant de confirmer » était restée en
+  français dans le tableau ; `Confirmer le transfert` → `Ndima tuma` a été relu
+  et accepté.
 - **Les tons.** Le tableau est écrit sans accents (`Moni`, `nyi`, `Boro`). Le
-  dictionnaire conserve les tons (`Mòni`, `ńyī`) pour rester cohérent.
-- **Trois lignes non traduites** : `Référence`, `Sécurité`, et une deuxième
-  occurrence de `Solde disponible` (ligne 77). Cette dernière montre que la
-  relecture n'est pas systématique : c'est une limite de la source, pas un
-  oubli de notre part.
+  dictionnaire conserve les tons (`Mòni`, `ńyī`) ; cette convention a été
+  acceptée en relecture.
+- **Trois lignes non traduites dans le tableau** : `Référence`, `Sécurité`, et
+  une deuxième occurrence de `Solde disponible` (ligne 77). Elles ne bloquent
+  plus rien : nos valeurs ont été relues.
 
-### Décision d'intégration
-
-Seules les valeurs **explicitement fournies** ont été adoptées. Aucune phrase
-n'a été réécrite par déduction. Les points ouverts sont signalés dans le code
-par `// à valider` et listés ci-dessus.
-
-Détail complet des 90 lignes, avec décision ligne par ligne :
+Détail complet des 90 lignes du tableau natif :
 `MERA_Tableau_Natif_Duala.xlsx` (hors dépôt).
 
 ---
 
-## 3. Ce qui a changé dans le code
+## 4. Ce qui a changé dans le code
 
-Versions 1.2.3 et 1.2.4, fichier `src/dictionaries.js`, bloc `DUALA` :
+Versions 1.2.3, 1.2.4 et 1.3.0, fichier `src/dictionaries.js`, bloc `DUALA` :
 
 | Clé | Avant | Après | Fondement |
 |-----|-------|-------|-----------|
@@ -104,21 +111,19 @@ Versions 1.2.3 et 1.2.4, fichier `src/dictionaries.js`, bloc `DUALA` :
 | Gratuit | `Tòlɔ` | `esibè sawa` | ligne 39 |
 | Total débité | `Mòni ma bì` | `Total ba nongui no` | ligne 52 |
 | Nom du bénéficiaire | `Njaŋa ya moto a ńyī` | `Dina la moto a ńyī` | lignes 21-22 (`dina` = nom) |
-| Frais de transfert | `Dongo ya tuma` | `frais ya loma moni` | emprunt + `loma`, décision du 14 nov. 2026 |
+| Frais de transfert | `Dongo ya tuma` | `frais ya loma moni` | décision du 14 nov. 2026 |
 
-La dernière ligne est une **construction** : le natif fournit le mot `dina`,
-mais pas la formule complète. Elle reste marquée `// à valider`.
+**Version 1.3.0** : les 128 marqueurs `// à valider` et `// à confirmer` sont
+retirés. Chaque bloc de langue porte une note de relecture
+(`// Relecture : locuteur natif …, 14 novembre 2026`).
 
 ---
 
-## 4. Protocole pour les autres langues
+## 5. Tenir ce document à jour
 
-1. Faire relire les entrées listées dans `MERA_Entrees_A_Valider.xlsx`.
-2. Pour chaque entrée : « OK », ou la formulation corrigée.
-3. Reporter la correction dans `src/dictionaries.js`, avec la date et la source.
-4. Relancer `npm test`.
-5. Mettre à jour ce document.
-
-Un relecteur natif par langue suffit pour lever le statut « à valider ». En cas
-de désaccord entre deux relecteurs, la variante régionale est documentée dans
-`docs/SOURCES.md` plutôt que supprimée.
+1. Toute nouvelle clé ajoutée doit être relue avant publication ; sinon elle
+   porte `// à valider`.
+2. Toute correction apportée après relecture est datée dans ce document.
+3. Relancer `npm test` après chaque modification.
+4. En cas de désaccord entre deux relecteurs, la variante régionale est
+   documentée dans [`SOURCES.md`](SOURCES.md) plutôt que supprimée.

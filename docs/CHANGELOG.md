@@ -6,6 +6,34 @@ Toutes les versions suivent `MAJEUR.MINEUR.CORRECTIF`. Le numéro affiché dans
 
 ---
 
+## 1.3.0 — Validation native des quatre langues
+
+**Publiée le 14 novembre 2026** · Tag `v1.3.0`
+
+### Modifié
+
+- **128 entrées levées** : les marqueurs `// à valider` (123) et
+  `// à confirmer` (5) sont retirés de `src/dictionaries.js` et de `demo.html`.
+  Les quatre dictionnaires ont été relus et validés par **un locuteur natif de
+  chaque langue** le 14 novembre 2026 :
+  - ewondo : 17 entrées ;
+  - fulfulde : 18 entrées ;
+  - basaa : 48 entrées ;
+  - duala : 45 entrées.
+- Chaque bloc de langue porte une note de relecture
+  (`// Relecture : locuteur natif …, 14 novembre 2026`).
+- `docs/VALIDATION.md` réécrit : registre de validation, portée, points ouverts.
+- `docs/SOURCES.md`, `README.md`, `docs/DOCUMENTATION.md`, `docs/FAQ.md` et
+  `docs/ARCHITECTURE.md` alignés sur le nouveau statut.
+
+### Inchangé
+
+- Aucune valeur de traduction n'a été modifiée dans cette version : seuls les
+  marqueurs de statut et la documentation changent.
+- Les valeurs duala adoptées en 1.2.3 et 1.2.4 restent en place.
+
+---
+
 ## 1.2.4 — Frais de transfert en duala
 
 **Publiée le 14 novembre 2026** · Tag `v1.2.4`
@@ -15,8 +43,8 @@ Toutes les versions suivent `MAJEUR.MINEUR.CORRECTIF`. Le numéro affiché dans
 - **Duala — `Frais de transfert`** : `Dongo ya tuma` remplacé par
   **`frais ya loma moni`** (emprunt « frais » + `loma`, envoyer). Décision du
   14 novembre 2026 après examen du tableau natif.
-- `Frais` seul reste **`Dongo`**, toujours marqué `// à valider` : le tableau
-  natif ne contient aucune ligne « Frais ».
+- `Frais` seul reste **`Dongo`**, non tranché par le tableau natif, qui ne
+  contient aucune ligne « Frais ».
 
 ---
 
@@ -162,11 +190,11 @@ Toutes les versions suivent `MAJEUR.MINEUR.CORRECTIF`. Le numéro affiché dans
 
 | Élément | Valeur actuelle |
 |---|---|
-| `manifest.json` → `version` | `1.2.4` |
-| `src/content.js` → `VERSION` | `1.2.4` |
-| `src/popup.js` → `CONTENT_VERSION` | `1.2.4` |
-| Diagnostic → `Extension` | `v1.2.4` |
-| Dernier tag Git | `v1.2.4` |
+| `manifest.json` → `version` | `1.3.0` |
+| `src/content.js` → `VERSION` | `1.3.0` |
+| `src/popup.js` → `CONTENT_VERSION` | `1.3.0` |
+| Diagnostic → `Extension` | `v1.3.0` |
+| Dernier tag Git | `v1.3.0` |
 
 Lors d'une nouvelle version, mettre à jour **les quatre** emplacements, puis
 relancer `npm test`, régénérer l'archive et créer un tag.

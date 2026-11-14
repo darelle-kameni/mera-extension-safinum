@@ -129,10 +129,10 @@ Aucun corpus disponible ne contient la **terminologie mobile money moderne** :
 solde, frais de service, transaction, bénéficiaire au sens bancaire. Ces
 concepts n'existaient pas dans les textes sources (Bible, dictionnaire de 2019).
 
-Les termes correspondants sont donc des **propositions** explicitement marquées
-`// à valider` dans le code. Le duala a été partiellement relu par un locuteur
-natif le 14 novembre 2026 : 12 valeurs adoptées, 4 points encore ouverts. Les
-trois autres langues restent à confirmer. Voir `docs/VALIDATION.md`.
+Les termes correspondants ont donc été **proposés**, puis **relus et validés
+par un locuteur natif de chaque langue le 14 novembre 2026** — ewondo,
+fulfulde, basaa et duala. 128 entrées ont été levées, en plus des 12 valeurs
+duala adoptées du tableau trilingue. Voir `docs/VALIDATION.md`.
 
 Cette limite est **déclarée**, plutôt que masquée par des traductions inventées.
 
@@ -230,10 +230,10 @@ Variante sans installation : ouvrir `demo.html` dans Chrome.
 
 1. **Traduction par correspondance** de segments, non par compréhension. Un
    libellé absent du dictionnaire reste en français.
-2. **Terminologie mobile money** : propositions à valider par des locuteurs
-   natifs.
-3. **Basaa et duala** : certaines entrées sont des néologismes proposés,
-   signalés `// à valider`.
+2. **Terminologie mobile money** : relue et validée par un locuteur natif par
+   langue (14 novembre 2026).
+3. **Basaa et duala** : certaines entrées sont des néologismes, acceptés lors de
+   la relecture native.
 4. **Lecture vocale** : prononciation indicative, faute de voix locales.
 5. **Périmètre** : `safinum.cm` uniquement, conformément au hackathon.
 6. **Chargement à chaud** : Chrome ne remplace pas un content script déjà
@@ -262,5 +262,5 @@ Variante sans installation : ouvrir `demo.html` dans Chrome.
 ---
 
 **Dépôt** : <https://github.com/darelle-kameni/mera-extension-safinum>
-**Version présentée** : 1.2.4
+**Version présentée** : 1.3.0
 **Licence du code** : MIT

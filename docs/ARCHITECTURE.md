@@ -81,7 +81,8 @@ window.__MERA_DICTIONARIES = {
   elle n'entre pas dans la table inverse.
 - Les dates (`05 nov. 2026`) sont **absentes** : elles sont protégées par le
   garde-fou et ne doivent jamais être traduites.
-- Toute proposition non attestée porte le commentaire `// à valider`.
+- Chaque bloc de langue porte une note de relecture native
+  (`// Relecture : locuteur natif …, 14 novembre 2026`).
 
 Duala possède 62 clés (quelques variantes supplémentaires) ; les autres langues
 en ont 59.
@@ -272,7 +273,7 @@ Une seconde instance ne remplace donc jamais la première.
 ## 6. Négociation de version
 
 Un content script chargé avant une mise à jour reste en mémoire. Le popup
-compare la version annoncée par la page à `CONTENT_VERSION` (`1.2.4`) :
+compare la version annoncée par la page à `CONTENT_VERSION` (`1.3.0`) :
 
 ```mermaid
 sequenceDiagram
