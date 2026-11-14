@@ -4,7 +4,7 @@
 (function () {
   "use strict";
 
-  const CONTENT_VERSION = "1.2.3";
+  const CONTENT_VERSION = "1.2.4";
   let reloadedForVersion = false;
 
   const $ = (id) => document.getElementById(id);
@@ -324,7 +324,7 @@
           lines.push("Langue : " + (res.language || "—"));
           lines.push("Traduits : " + (res.stats ? res.stats.translated : 0));
         }
-        lines.push("Extension : v1.2.3");
+        lines.push("Extension : v1.2.4");
         out.textContent = lines.join("\n");
       });
     });

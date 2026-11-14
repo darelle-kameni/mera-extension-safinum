@@ -272,7 +272,7 @@ Une seconde instance ne remplace donc jamais la première.
 ## 6. Négociation de version
 
 Un content script chargé avant une mise à jour reste en mémoire. Le popup
-compare la version annoncée par la page à `CONTENT_VERSION` (`1.2.3`) :
+compare la version annoncée par la page à `CONTENT_VERSION` (`1.2.4`) :
 
 ```mermaid
 sequenceDiagram

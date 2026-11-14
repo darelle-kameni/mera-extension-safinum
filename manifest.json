@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "MERA — Traduction Financière Camerounaise",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "Traduit l'environnement de test Safinum en Ewondo, Fulfulde, Basaa ou Duala sans jamais modifier un montant, un numéro ou une référence.",
   "permissions": ["activeTab", "scripting", "tabs"],
   "action": {

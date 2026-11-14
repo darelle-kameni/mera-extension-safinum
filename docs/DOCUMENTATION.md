@@ -262,5 +262,5 @@ Variante sans installation : ouvrir `demo.html` dans Chrome.
 ---
 
 **Dépôt** : <https://github.com/darelle-kameni/mera-extension-safinum>
-**Version présentée** : 1.2.3
+**Version présentée** : 1.2.4
 **Licence du code** : MIT

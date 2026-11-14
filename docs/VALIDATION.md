@@ -60,9 +60,11 @@ mais pas tous nos libellés.
 - **`tuma` contre `loma`.** Le natif emploie `loma` pour « envoyer ». Le code
   emploie `tuma` dans une quinzaine d'entrées, dont six phrases entières. Les deux formes
   peuvent coexister (registres différents), mais il faut le confirmer.
-- **Les frais.** Aucune ligne « Frais » ni « Frais de transfert ». Le natif
-  donne seulement `Moni mwabu` pour « frais de service » et `esibè sawa` pour
-  « sans frais ».
+- **Les frais.** Aucune ligne « Frais » ni « Frais de transfert » dans le
+  tableau natif. Le natif donne seulement `Moni mwabu` pour « frais de
+  service » et `esibè sawa` pour « sans frais ». Pour « Frais de transfert »,
+  la forme `frais ya loma moni` a été retenue le 14 nov. 2026 (emprunt + racine
+  `loma`) ; « Frais » seul reste `Dongo`, non validé.
 - **Confirmer.** La ligne « Vérifier avant de confirmer » est restée en
   français : aucun verbe de confirmation n'est fourni.
 - **Les tons.** Le tableau est écrit sans accents (`Moni`, `nyi`, `Boro`). Le
@@ -85,7 +87,7 @@ Détail complet des 90 lignes, avec décision ligne par ligne :
 
 ## 3. Ce qui a changé dans le code
 
-Version 1.2.3, fichier `src/dictionaries.js`, bloc `DUALA` :
+Versions 1.2.3 et 1.2.4, fichier `src/dictionaries.js`, bloc `DUALA` :
 
 | Clé | Avant | Après | Fondement |
 |-----|-------|-------|-----------|
@@ -102,6 +104,7 @@ Version 1.2.3, fichier `src/dictionaries.js`, bloc `DUALA` :
 | Gratuit | `Tòlɔ` | `esibè sawa` | ligne 39 |
 | Total débité | `Mòni ma bì` | `Total ba nongui no` | ligne 52 |
 | Nom du bénéficiaire | `Njaŋa ya moto a ńyī` | `Dina la moto a ńyī` | lignes 21-22 (`dina` = nom) |
+| Frais de transfert | `Dongo ya tuma` | `frais ya loma moni` | emprunt + `loma`, décision du 14 nov. 2026 |
 
 La dernière ligne est une **construction** : le natif fournit le mot `dina`,
 mais pas la formule complète. Elle reste marquée `// à valider`.

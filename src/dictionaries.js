@@ -366,7 +366,7 @@
     "Bonjour": "Idiba bwam",
     "argent": "mòni",
     "Frais": "Dongo", // taxe/redevance — à valider
-    "Frais de transfert": "Dongo ya tuma",
+    "Frais de transfert": "frais ya loma moni", // emprunt « frais » + loma (envoi) — décision du 14 nov. 2026
     "Montant": "Mòni",
     "Montant à envoyer": "Mòni ma lomia", // locuteur natif duala, 14 nov. 2026
     "Effectuer un transfert": "Loma la moni", // locuteur natif duala, 14 nov. 2026

@@ -514,7 +514,7 @@ window.chrome={runtime:{onMessage:{addListener(){}},sendMessage(){}},
     "Bonjour": "Idiba bwam",
     "argent": "mòni",
     "Frais": "Dongo", // taxe/redevance — à valider
-    "Frais de transfert": "Dongo ya tuma",
+    "Frais de transfert": "frais ya loma moni", // emprunt « frais » + loma (envoi) — décision du 14 nov. 2026
     "Montant": "Mòni",
     "Montant à envoyer": "Mòni ma lomia", // locuteur natif duala, 14 nov. 2026
     "Effectuer un transfert": "Loma la moni", // locuteur natif duala, 14 nov. 2026
@@ -654,7 +654,7 @@ window.chrome={runtime:{onMessage:{addListener(){}},sendMessage(){}},
   // Anti double-injection : le popup peut réinjecter les scripts en secours.
   // Sans ce garde, deux instances se disputent les mêmes nœuds et l'une
   // restaure une langue déjà traduite (ex. salutation figée en basaa).
-  const VERSION = "1.2.3";
+  const VERSION = "1.2.4";
   // Déjà chargé (même version) ou version obsolète sur la page : dans les deux
   // cas on ne crée pas une seconde instance. Le popup recharge la page si la
   // version diffère, ce qui recharge le script déclaré dans le manifest.

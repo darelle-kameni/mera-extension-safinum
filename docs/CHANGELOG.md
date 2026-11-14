@@ -6,6 +6,20 @@ Toutes les versions suivent `MAJEUR.MINEUR.CORRECTIF`. Le numéro affiché dans
 
 ---
 
+## 1.2.4 — Frais de transfert en duala
+
+**Publiée le 14 novembre 2026** · Tag `v1.2.4`
+
+### Modifié
+
+- **Duala — `Frais de transfert`** : `Dongo ya tuma` remplacé par
+  **`frais ya loma moni`** (emprunt « frais » + `loma`, envoyer). Décision du
+  14 novembre 2026 après examen du tableau natif.
+- `Frais` seul reste **`Dongo`**, toujours marqué `// à valider` : le tableau
+  natif ne contient aucune ligne « Frais ».
+
+---
+
 ## 1.2.3 — Intégration de la source duala native
 
 **Publiée le 14 novembre 2026** · Tag `v1.2.3`
@@ -148,11 +162,11 @@ Toutes les versions suivent `MAJEUR.MINEUR.CORRECTIF`. Le numéro affiché dans
 
 | Élément | Valeur actuelle |
 |---|---|
-| `manifest.json` → `version` | `1.2.3` |
-| `src/content.js` → `VERSION` | `1.2.3` |
-| `src/popup.js` → `CONTENT_VERSION` | `1.2.3` |
-| Diagnostic → `Extension` | `v1.2.3` |
-| Dernier tag Git | `v1.2.3` |
+| `manifest.json` → `version` | `1.2.4` |
+| `src/content.js` → `VERSION` | `1.2.4` |
+| `src/popup.js` → `CONTENT_VERSION` | `1.2.4` |
+| Diagnostic → `Extension` | `v1.2.4` |
+| Dernier tag Git | `v1.2.4` |
 
 Lors d'une nouvelle version, mettre à jour **les quatre** emplacements, puis
 relancer `npm test`, régénérer l'archive et créer un tag.
