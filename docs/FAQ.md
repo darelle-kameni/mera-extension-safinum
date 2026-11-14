@@ -59,7 +59,7 @@ Si ce n'est pas le cas :
 
 Ce cas est couvert depuis la version **1.2.2** : l'ancienne traduction `Mbolo`
 est reconnue comme un alias de `Bonjour`. Vérifier dans **Diagnostic** que
-`Version page` est bien `1.2.2`. Sinon : mettre à jour, puis F5.
+`Version page` est bien `1.2.3`. Sinon : mettre à jour, puis F5.
 
 ### Certains textes restent en français
 

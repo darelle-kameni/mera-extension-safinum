@@ -6,6 +6,38 @@ Toutes les versions suivent `MAJEUR.MINEUR.CORRECTIF`. Le numéro affiché dans
 
 ---
 
+## 1.2.3 — Intégration de la source duala native
+
+**Publiée le 14 novembre 2026** · Tag `v1.2.3`
+
+### Modifié
+
+- **Duala : 12 valeurs adoptées** à partir du tableau trilingue fourni par un
+  locuteur natif le 14 novembre 2026 (90 entrées) :
+  - `Solde`, `Solde disponible`, `Solde après opération` → **Boro** ;
+  - `Envoyer`, `Transfert`, `Effectuer un transfert` → **Loma la moni** ;
+  - `Montant à envoyer` → **Mòni ma lomia** ;
+  - `Continuer` → **Alanè o boso**, `Modifier` → **Wènguisan** ;
+  - `Gratuit` → **esibè sawa**, `Total débité` → **Total ba nongui no** ;
+  - `Bonjour` → **Idiba bwam** (graphie confirmée).
+- **`Nom du bénéficiaire`** : `njaŋa` (type, statut) remplacé par `dina` (nom),
+  d'après les lignes « Reçu de » / « Envoyé à ». Formule encore à valider.
+
+### Ajouté
+
+- `docs/VALIDATION.md` : statut par langue, portée de la source duala, points
+  qu'elle ne tranche pas.
+- `docs/tableau_trilingue_francais_duala_anglais(1).pdf` : source conservée
+  avec les documents de travail. Les PDF sont hors dépôt (`.gitignore`).
+
+### Non modifié
+
+- Les phrases duala contenant `tuma` restent en l'état : la source ne les
+  couvre pas et elles ne peuvent pas être réécrites par déduction.
+- Ewondo, fulfulde et basaa restent marqués `// à valider`.
+
+---
+
 ## 1.2.2 — Correctifs de compatibilité et rechargement automatique
 
 **Publiée le 14 novembre 2026** · Tag `v1.2.2`
@@ -116,11 +148,11 @@ Toutes les versions suivent `MAJEUR.MINEUR.CORRECTIF`. Le numéro affiché dans
 
 | Élément | Valeur actuelle |
 |---|---|
-| `manifest.json` → `version` | `1.2.2` |
-| `src/content.js` → `VERSION` | `1.2.2` |
-| `src/popup.js` → `CONTENT_VERSION` | `1.2.2` |
-| Diagnostic → `Extension` | `v1.2.2` |
-| Dernier tag Git | `v1.2.2` |
+| `manifest.json` → `version` | `1.2.3` |
+| `src/content.js` → `VERSION` | `1.2.3` |
+| `src/popup.js` → `CONTENT_VERSION` | `1.2.3` |
+| Diagnostic → `Extension` | `v1.2.3` |
+| Dernier tag Git | `v1.2.3` |
 
 Lors d'une nouvelle version, mettre à jour **les quatre** emplacements, puis
 relancer `npm test`, régénérer l'archive et créer un tag.

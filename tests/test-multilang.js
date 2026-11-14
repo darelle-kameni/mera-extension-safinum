@@ -7,7 +7,7 @@ const w=dom.window; w.requestAnimationFrame=cb=>setTimeout(cb,0);
 w.chrome={runtime:{onMessage:{addListener(){}},sendMessage(){}},storage:{sync:{get:(k,cb)=>cb({})}}};
 ['guard','dictionaries','content'].forEach(n=>w.eval(fs.readFileSync(SRC+'/'+n+'.js','utf8')));
 const wait=ms=>new Promise(r=>setTimeout(r,ms));
-const MARK={ewo:'Mòni ma wom',ful:'Soodi woodi',bas:'Yêglɛ̀',dua:'Mòni ma bèm',en:'Available balance'};
+const MARK={ewo:'Mòni ma wom',ful:'Soodi woodi',bas:'Yêglɛ̀',dua:'Boro',en:'Available balance'};
 const seq=['ewo','bas','ful','dua','ewo','ful','bas','en'];
 (async()=>{
   let ok=0,bad=0;

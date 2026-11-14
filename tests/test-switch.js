@@ -58,7 +58,7 @@ const wait = (ms) => new Promise((r) => setTimeout(r, ms));
       bas: "Mɛ̀ ǹyega, Amina",
       ewo: "Masug, Amina",
       ful: "Jam waali, Amina",
-      dua: "Idib'a bwam, Amina",
+      dua: "Idiba bwam, Amina",
       en: "Hello, Amina",
       fr: "Bonjour, Amina",
     };

@@ -142,8 +142,8 @@ check("fr : Solde disponible", fr("Solde disponible"), "Solde disponible");
 console.log("[6] Le duala est présent avec ses termes");
 
 const dua = makeTranslator("dua");
-check("dua : Bonjour", dua("Bonjour"), "Idib'a bwam");
-check("dua : Bonjour composé", dua("Bonjour, Amina"), "Idib'a bwam, Amina");
+check("dua : Bonjour", dua("Bonjour"), "Idiba bwam");
+check("dua : Bonjour composé", dua("Bonjour, Amina"), "Idiba bwam, Amina");
 check("dua : Montant", dua("Montant"), "Mòni");
 check("dua : montant protégé", dua("10 000 FCFA"), "10 000 FCFA");
 

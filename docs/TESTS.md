@@ -137,7 +137,7 @@ Chaque étape vérifie le marqueur de langue et l'intégrité du montant.
   | Basaa | `Mɛ̀ ǹyega, Amina` |
   | Ewondo | `Masug, Amina` |
   | Fulfulde | `Jam waali, Amina` |
-  | Duala | `Idib'a bwam, Amina` |
+  | Duala | `Idiba bwam, Amina` |
   | English | `Hello, Amina` |
   | Français | `Bonjour, Amina` |
 

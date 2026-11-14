@@ -44,8 +44,8 @@ function boot({ receiverPresent }) {
         if (receiverPresent) {
           lastError = null;
           cb(msg.type === "MERA_STATUS"
-            ? { active: false, language: null, stats: { translated: 0, protected: 0, skipped: 0 }, version: "1.2.2" }
-            : { ok: true, version: "1.2.2" });
+            ? { active: false, language: null, stats: { translated: 0, protected: 0, skipped: 0 }, version: "1.2.3" }
+            : { ok: true, version: "1.2.3" });
         } else {
           lastError = { message: NO_RECEIVER };
           cb(undefined);

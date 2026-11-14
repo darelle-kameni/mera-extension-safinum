@@ -73,7 +73,7 @@ les langues.
 | Ewondo | **Masug** | Variante citée : `Mbolo` ; formes horaires documentées |
 | Fulfulde | **Jam waali** | « As-tu passé la nuit en paix ? », réponse `Jam tan` |
 | Basaa | **Mɛ̀ ǹyega** | Polyvalent : bonjour / merci / respect |
-| Duala | **Idib'a bwam** | Littéralement « bon matin », usage général avant midi |
+| Duala | **Idiba bwam** | Littéralement « bon matin », usage général avant midi |
 
 ---
 
@@ -120,7 +120,7 @@ traçable, documentée dans `docs/SOURCES.md` :
 | Ewondo | corpus biblique `flagship-ai/cameroon_bibles` (Hugging Face) | CC-BY-4.0 |
 | Fulfulde | même corpus, variante Adamawa | CC-BY-4.0 |
 | Basaa | Dictionnaire Njock (2019), SIL / Webonary, 23 283 entrées | © SIL, pas de licence commerciale explicite |
-| Duala | Wiktionnaire, vocabulaire biblique, ressources d'apprentissage | sources non normatives |
+| Duala | Wiktionnaire, vocabulaire biblique, ressources d'apprentissage, **tableau d'un locuteur natif (14 nov. 2026)** | sources non normatives, validation partielle |
 | English | paires fr/en du site | — |
 
 ### Limite assumée et déclarée
@@ -130,8 +130,9 @@ solde, frais de service, transaction, bénéficiaire au sens bancaire. Ces
 concepts n'existaient pas dans les textes sources (Bible, dictionnaire de 2019).
 
 Les termes correspondants sont donc des **propositions** explicitement marquées
-`// à valider` dans le code. Ils devront être confirmés par des locuteurs natifs
-avant un déploiement réel.
+`// à valider` dans le code. Le duala a été partiellement relu par un locuteur
+natif le 14 novembre 2026 : 12 valeurs adoptées, 4 points encore ouverts. Les
+trois autres langues restent à confirmer. Voir `docs/VALIDATION.md`.
 
 Cette limite est **déclarée**, plutôt que masquée par des traductions inventées.
 
@@ -261,5 +262,5 @@ Variante sans installation : ouvrir `demo.html` dans Chrome.
 ---
 
 **Dépôt** : <https://github.com/darelle-kameni/mera-extension-safinum>
-**Version présentée** : 1.2.2
+**Version présentée** : 1.2.3
 **Licence du code** : MIT

@@ -353,34 +353,36 @@
   // ------------------------------------------------------------ DUALA
   // Base : termes duala relevés au Wiktionnaire français (~400 entrées,
   // surtout flore/faune) et vocabulaire de la Bible en duala.
+  // Source complémentaire : tableau trilingue fourni par un locuteur natif
+  // duala le 14 novembre 2026 (90 entrées, voir docs/VALIDATION.md).
   // La terminologie mobile money n'existe dans aucune source libre :
-  // les entrées concernées sont des propositions explicites, à valider.
+  // les entrées restantes sont des propositions explicites, à valider.
   const DUALA = {
     // --- Attestés / usuels
-    // Salutation : Idib'a bwam (« bon matin »), formule standard avant midi,
+    // Salutation : Idiba bwam (« bon matin »), formule standard avant midi,
     // également employée comme bonjour général.
     // Sources : Polyglot Club (douala), ITAG Cameroun (leçon 1), Omniglot.
-    // À confirmer par un locuteur natif.
-    "Bonjour": "Idib'a bwam",
+    // Graphie confirmée par le locuteur natif le 14 novembre 2026.
+    "Bonjour": "Idiba bwam",
     "argent": "mòni",
     "Frais": "Dongo", // taxe/redevance — à valider
     "Frais de transfert": "Dongo ya tuma",
     "Montant": "Mòni",
-    "Montant à envoyer": "Mòni ma tuma", // à valider
-    "Effectuer un transfert": "Tuma mòni", // à valider
-    "Envoyer": "Tuma", // attesté (wiktionnaire : tuma = envoyer)
-    "Transfert": "Tuma",
+    "Montant à envoyer": "Mòni ma lomia", // locuteur natif duala, 14 nov. 2026
+    "Effectuer un transfert": "Loma la moni", // locuteur natif duala, 14 nov. 2026
+    "Envoyer": "Loma la moni", // locuteur natif duala, 14 nov. 2026 (variante : Tuma)
+    "Transfert": "Loma la moni", // locuteur natif duala, 14 nov. 2026
     "Total à débiter": "Mòni ma bì", // à valider
-    "Total débité": "Mòni ma bì", // à valider
+    "Total débité": "Total ba nongui no", // locuteur natif duala, 14 nov. 2026
 
     // --- Propositions explicites (à valider)
     "Banque en ligne": "Banka ya ńnɛ̀nɛ̀", // à valider
     "Compte courant": "Kalati a mòni", // à valider
     "Votre compte": "Kalati ao", // à valider
     "Numéro de compte": "Nɔmba ya kalati", // à valider
-    "Solde": "Mòni ma bèm", // « argent qui reste » — à valider
-    "Solde disponible": "Mòni ma bèm", // à valider
-    "Solde après opération": "Mòni ma bèm", // à valider
+    "Solde": "Boro", // locuteur natif duala, 14 nov. 2026
+    "Solde disponible": "Boro", // locuteur natif duala, 14 nov. 2026
+    "Solde après opération": "Boro", // locuteur natif duala, 14 nov. 2026
     "Consultez votre solde et lancez un transfert en toute sécurité.":
       "Yen mòni mao, tuma nì mbáká.", // à valider
     "Consulter les frais": "Yen dongo", // à valider
@@ -396,13 +398,13 @@
     "Choisissez le type de transfert et le montant. Les frais sont calculés automatiquement.":
       "Pona ndɛnge ya tuma nì mòni. Dongo i ńyī ɓe sɔŋ.", // à valider
     "Type d'opération": "Ndɛnge ya tuma", // à valider
-    "Gratuit": "Tòlɔ", // à valider
-    "Continuer": "Kɛ", // à valider
+    "Gratuit": "esibè sawa", // « sans frais » — locuteur natif duala, 14 nov. 2026
+    "Continuer": "Alanè o boso", // locuteur natif duala, 14 nov. 2026
     "Retour": "Mbusa", // à valider
 
     "Renseignez les informations du destinataire. Vérifiez toujours le numéro avant de valider.":
       "Tila njaŋa ya moto a ńyī. Yen nɔmba butu náŋgɛ̀ ú ndima.", // à valider
-    "Nom du bénéficiaire": "Njaŋa ya moto a ńyī", // à valider
+    "Nom du bénéficiaire": "Dina la moto a ńyī", // dina = nom (locuteur natif) ; construction à valider
     "Numéro de téléphone": "Nɔmba ya telefoŋ", // à valider
     "Motif du transfert": "Ntina ya tuma", // à valider
     "Note (optionnel)": "Kalati (si ye ndila)", // à valider
@@ -419,7 +421,7 @@
     "Je confirme que les informations ci-dessus sont correctes.":
       "Na ndima na njaŋa ni ńyī ɓe bwam.", // à valider
     "Confirmer le transfert": "Ndima tuma", // à valider
-    "Modifier": "Bongisa", // à valider
+    "Modifier": "Wènguisan", // locuteur natif duala, 14 nov. 2026 (variante : Tukwa)
 
     "Transfert effectué": "Tuma i bi.", // à valider
     "Votre transfert a été envoyé avec succès.":

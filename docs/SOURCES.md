@@ -117,7 +117,7 @@ ci-dessous, et une validation par un locuteur natif reste nécessaire.
 | Ewondo | **Masug** | Sources d'apprentissage ewondo (formes divergentes selon les sources) | Salutation familière et intemporelle ; variante citée : `Mbolo`, réponse « Mbolo wa » |
 | Fulfulde | **Jam waali** | ITAG Cameroun (chap. 1 Salutations), plusieurs lexiques peuls | « As-tu passé la nuit en paix ? », réponse « Jam tan » |
 | Basaa | **Mɛ̀ ǹyega** | hikoadjom.com (articles sur les salutations en basaa) | Polyvalent (bonjour / merci / respect), ex. « Mɛ̀ ǹyega, saŋgo ! » |
-| Duala | **Idib'a bwam** | Polyglot Club, ITAG Cameroun (leçon 1), Omniglot, free.fr | Litt. « bon matin » ; bonjour général avant midi |
+| Duala | **Idiba bwam** | Polyglot Club, ITAG Cameroun (leçon 1), Omniglot, free.fr | Litt. « bon matin » ; bonjour général avant midi |
 
 Variantes horaires relevées (non utilisées : la page n'affiche que « Bonjour ») :
 
@@ -128,7 +128,9 @@ Variantes horaires relevées (non utilisées : la page n'affiche que « Bonjour 
 
 **Réserve** : ces sources sont des ressources d'apprentissage en ligne, pas des
 documents normatifs. L'orthographe et les tons doivent être confirmés par un
-locuteur natif avant un déploiement réel.
+locuteur natif avant un déploiement réel. Pour le duala, la graphie `Idiba bwam`
+a été confirmée par un locuteur natif le 14 novembre 2026 ; les trois autres
+langues restent en attente.
 
 ---
 
@@ -136,20 +138,24 @@ locuteur natif avant un déploiement réel.
 
 **Sources** : Wiktionnaire français (termes usuels, ~400 entrées, surtout flore
 et faune), vocabulaire de la Bible en duala, ressources d'apprentissage
-(Polyglot Club, ITAG Cameroun, Omniglot, free.fr).
+(Polyglot Club, ITAG Cameroun, Omniglot, free.fr) et **tableau trilingue fourni
+par un locuteur natif duala le 14 novembre 2026** (90 entrées, voir
+[`VALIDATION.md`](VALIDATION.md)).
 
-**Réserve** : ces sources ne sont pas normatives et ne couvrent pas la
-terminologie financière. Les entrées concernées sont marquées `// à valider`.
+**Réserve** : ces sources ne sont pas normatives et ne couvrent pas toute la
+terminologie financière. Les entrées non couvertes sont marquées `// à valider`.
 
 ### Termes usuels relevés
 
 | Français | Duala | Statut |
 |----------|-------|--------|
 | argent | **mòni** | attesté |
-| envoyer | **tuma** | attesté (Wiktionnaire) |
-| frais, taxe | **Dongo** | à valider |
-| montant | **Mòni** | à valider |
-| Bonjour | **Idib'a bwam** | à valider (voir § 3 bis) |
+| envoyer | **loma** (variante : `tuma`) | locuteur natif, 14 nov. 2026 |
+| solde | **Boro** | locuteur natif, 14 nov. 2026 |
+| frais, taxe | **Dongo** | proposition, à valider |
+| montant | **Mòni** | attesté / natif (`Moni`) |
+| nom | **dina** | locuteur natif, 14 nov. 2026 |
+| Bonjour | **Idiba bwam** | locuteur natif, 14 nov. 2026 |
 
 Duala contient 62 clés (quelques variantes supplémentaires) ; les autres langues
 en contiennent 59.
@@ -169,6 +175,11 @@ Aucun corpus disponible ne contient la **terminologie mobile money moderne** :
 Ces concepts n'existaient pas dans les textes sources (Bible, dictionnaire de 2019).
 Les termes correspondants sont donc des **propositions** qu'un locuteur natif
 doit confirmer avant tout déploiement réel.
+
+Le duala est le plus avancé : un locuteur natif a fourni un tableau de 90 entrées
+(14 novembre 2026), dont 12 valeurs ont été adoptées. Les points qu'il ne tranche
+pas — `tuma` contre `loma`, les frais, la confirmation — restent marqués
+`// à valider`. Voir [`VALIDATION.md`](VALIDATION.md).
 
 **Cette limite est assumée et documentée** — l'alternative aurait été d'inventer
 des traductions sans le dire, ce que le règlement sanctionne.

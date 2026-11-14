@@ -4,7 +4,7 @@
 (function () {
   "use strict";
 
-  const CONTENT_VERSION = "1.2.2";
+  const CONTENT_VERSION = "1.2.3";
   let reloadedForVersion = false;
 
   const $ = (id) => document.getElementById(id);
@@ -21,7 +21,7 @@
     ewo: "Mòni ma wom",
     ful: "Soodi woodi",
     bas: "Yêglɛ̀",
-    dua: "Mòni ma bèm",
+    dua: "Boro",
   };
 
   const LANG_NAMES = {
@@ -324,7 +324,7 @@
           lines.push("Langue : " + (res.language || "—"));
           lines.push("Traduits : " + (res.stats ? res.stats.translated : 0));
         }
-        lines.push("Extension : v1.2.2");
+        lines.push("Extension : v1.2.3");
         out.textContent = lines.join("\n");
       });
     });

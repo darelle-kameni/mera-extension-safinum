@@ -115,7 +115,7 @@ documentée dans [`docs/SOURCES.md`](docs/SOURCES.md).
 | Ewondo | **Masug** | Variante citée : `Mbolo` |
 | Fulfulde | **Jam waali** | Réponse : `Jam tan` |
 | Basaa | **Mɛ̀ ǹyega** | Polyvalent (bonjour / merci / respect) |
-| Duala | **Idib'a bwam** | Littéralement « bon matin » |
+| Duala | **Idiba bwam** | Littéralement « bon matin » |
 | English | Hello | — |
 
 ---
@@ -244,8 +244,10 @@ rechargement.
 1. **Terminologie mobile money.** « Solde », « frais de service » ou
    « transaction » sont absents des corpus sources (Bible, dictionnaire de 2019).
    Les termes retenus sont des **propositions documentées**, marquées
-   `// à valider` dans le code. Une validation par locuteur natif est nécessaire
-   avant un déploiement réel.
+   `// à valider` dans le code. Le duala a été partiellement relu par un
+   locuteur natif (14 novembre 2026) : 12 valeurs adoptées. L'ewondo, le
+   fulfulde et le basaa restent à valider. Voir
+   [`docs/VALIDATION.md`](docs/VALIDATION.md).
 
 2. **Traduction par correspondance.** L'extension traduit des segments connus,
    pas par compréhension. Un libellé absent du dictionnaire reste en français.
@@ -283,6 +285,7 @@ rechargement.
 | [`docs/INSTALLATION.md`](docs/INSTALLATION.md) | Installation, mise à jour, désinstallation |
 | [`docs/TESTS.md`](docs/TESTS.md) | Suites de tests et vérification manuelle |
 | [`docs/SOURCES.md`](docs/SOURCES.md) | Provenance de chaque terme, sources écartées |
+| [`docs/VALIDATION.md`](docs/VALIDATION.md) | Validation par langue, source duala et points en attente |
 | [`docs/CHANGELOG.md`](docs/CHANGELOG.md) | Historique des versions |
 | [`docs/FAQ.md`](docs/FAQ.md) | Dépannage et questions fréquentes |
 
@@ -303,5 +306,7 @@ tester la traduction et la lecture vocale **sans installer l'extension**.
 - Dictionnaire basaa : © 2019 Dr Pierre Emmanuel Njock, SIL — <https://www.webonary.org/basaa/>.
 - Dictionnaire Duala : ressources d'apprentissage et vocabulaire biblique ;
   voir les réserves dans [`docs/SOURCES.md`](docs/SOURCES.md).
+- Tableau trilingue duala : locuteur natif, 14 novembre 2026, fourni pour le
+  projet — voir [`docs/VALIDATION.md`](docs/VALIDATION.md).
 
 Les traductions restent des propositions à valider par des locuteurs natifs.
