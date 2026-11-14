@@ -278,6 +278,7 @@ rechargement.
 
 | Document | Contenu |
 |---|---|
+| [`docs/MERA_Dossier_Projet.docx`](docs/MERA_Dossier_Projet.docx) | **Dossier Word complet** (page de garde, sommaire, 10 sections, annexes) |
 | [`docs/DOCUMENTATION.md`](docs/DOCUMENTATION.md) | Dossier de présentation pour le jury |
 | [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) | Architecture, flux de données, protocoles de messages |
 | [`docs/INSTALLATION.md`](docs/INSTALLATION.md) | Installation, mise à jour, désinstallation |
