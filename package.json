@@ -1,0 +1,13 @@
+{
+  "name": "mera-safinum-extension",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Extension Chrome MERA — traduction financière en langues camerounaises pour le hackathon SAFINUM Innovate 2026",
+  "scripts": {
+    "test": "node tests/test-core.js && node tests/test-engine.js && node tests/test-page.js && node tests/test-real-dom.js && node tests/test-counter.js && node tests/test-cycle.js && node tests/test-reload.js && node tests/test-multilang.js && node tests/test-switch.js && node tests/test-tts.js && node tests/test-voices.js && node tests/test-popup.js",
+    "zip": "cd .. && zip -r mera-extension-safinum.zip hackathon-safinum-extension -x '*/node_modules/*' && echo 'Archive créée : mera-extension-safinum.zip'"
+  },
+  "devDependencies": {
+    "jsdom": "^31.0.0"
+  }
+}
