@@ -132,7 +132,31 @@ locuteur natif avant un déploiement réel.
 
 ---
 
-## 4. Limite commune aux trois langues
+## 4. Duala (`dua`)
+
+**Sources** : Wiktionnaire français (termes usuels, ~400 entrées, surtout flore
+et faune), vocabulaire de la Bible en duala, ressources d'apprentissage
+(Polyglot Club, ITAG Cameroun, Omniglot, free.fr).
+
+**Réserve** : ces sources ne sont pas normatives et ne couvrent pas la
+terminologie financière. Les entrées concernées sont marquées `// à valider`.
+
+### Termes usuels relevés
+
+| Français | Duala | Statut |
+|----------|-------|--------|
+| argent | **mòni** | attesté |
+| envoyer | **tuma** | attesté (Wiktionnaire) |
+| frais, taxe | **Dongo** | à valider |
+| montant | **Mòni** | à valider |
+| Bonjour | **Idib'a bwam** | à valider (voir § 3 bis) |
+
+Duala contient 62 clés (quelques variantes supplémentaires) ; les autres langues
+en contiennent 59.
+
+---
+
+## 5. Limite commune aux quatre langues
 
 Aucun corpus disponible ne contient la **terminologie mobile money moderne** :
 
@@ -151,18 +175,18 @@ des traductions sans le dire, ce que le règlement sanctionne.
 
 ---
 
-## 5. Sources écartées
+## 6. Sources écartées
 
 | Source | Raison de l'exclusion |
 |--------|-----------------------|
 | Corpus parallèle ewondo Mozilla | Licence NOODL-1.0 : recherche uniquement |
 | Corpus fulfulde Mozilla / Zenodo | NOODL-1.0 / accès restreint |
-| Wiktionnaire (duala) | Aucun terme financier, seulement flore et faune |
+| Wiktionnaire (duala) comme source financière | Aucun terme financier : seuls les termes usuels sont repris |
 | Common Voice (ewondo, fulfulde) | Audio (CC0) — non pertinent pour une extension texte |
 
 ---
 
-## 6. Attribution à conserver
+## 7. Attribution à conserver
 
 - Corpus biblique : `flagship-ai/cameroon_bibles`, Hugging Face, **CC-BY-4.0**
 - Dictionnaire basaa : © 2019 Dr Pierre Emmanuel Njock, SIL, webonary.org

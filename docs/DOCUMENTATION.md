@@ -1,120 +1,185 @@
-# MERA — Extension de traduction financière camerounaise
-## Document de présentation — Hackathon SAFINUM Innovate 2026
+# MERA — Traduction financière camerounaise
+
+**Dossier de présentation — Hackathon SAFINUM Innovate 2026**
+
+Extension Chrome (Manifest V3) · 6 langues · 327 tests · 0 donnée transmise
 
 ---
 
-### 1. Le problème
+## 1. Le problème
 
-Au Cameroun, les applications de mobile money affichent leurs écrans en français,
-langue que plusieurs millions de locuteurs ne lisent pas couramment. Les langues
-locales — ewondo, fulfulde, basaa, duala — sont parlées bien avant d'être lues.
+Au Cameroun, les interfaces de mobile money sont écrites en français ou en
+anglais. Une large part de la population parle ewondo, fulfulde, basaa ou duala
+au quotidien, sans lire couramment la langue de l'interface.
 
-Le risque n'est pas seulement l'incompréhension : c'est de **confirmer un transfert
-sans comprendre le montant débité, les frais appliqués ou l'identité du bénéficiaire**.
+Le risque n'est pas seulement l'incompréhension. C'est de **confirmer un
+transfert sans avoir compris le montant débité, les frais appliqués ou
+l'identité du bénéficiaire**. Sur un écran financier, une ambiguïté linguistique
+devient une perte d'argent.
 
-L'extension MERA répond à ce problème avec une contrainte absolue : **la traduction
-ne doit jamais altérer une valeur financière**.
+Deux écueils guettent toute tentative de traduction :
 
----
+1. **Altérer une valeur** — un montant, un numéro, une date, une référence — et
+   rendre l'écran dangereux ;
+2. **Inventer des termes** faute de vocabulaire financier disponible dans les
+   langues concernées.
 
-### 2. La solution
-
-Une extension Chrome (Manifest V3) qui :
-
-1. **Lit** l'environnement de test Safinum, sans aucun hook fourni par le site
-2. **Traduit** les libellés en ewondo, fulfulde ou basaa
-3. **Protège** toute valeur financière par un garde-fou strict
-4. **Détecte** le contenu injecté après le chargement (`MutationObserver`)
-5. **Restaure** la page en français d'un clic
-
-L'extension fonctionne sur une page **non modifiée**, comme l'exige le règlement.
+MERA est construite autour de ces deux interdits.
 
 ---
 
-### 3. Sécurité et intégrité financière
+## 2. La solution
+
+Une extension Chrome qui traduit l'environnement de test Safinum **sans jamais
+modifier une donnée financière**.
+
+| Étape | Ce que fait l'extension |
+|---|---|
+| 1. Lire | Parcourt le DOM de la page, sans hook fourni par le site |
+| 2. Identifier | Reconnaît les 59 libellés réels relevés dans le bundle du site |
+| 3. Protéger | Un garde-fou bloque toute valeur financière avant traduction |
+| 4. Traduire | Remplace les segments connus, du plus long au plus court |
+| 5. Vérifier | Compare les nombres avant/après ; annule toute altération |
+| 6. Suivre | Un `MutationObserver` traduit le contenu React ajouté ensuite |
+| 7. Restaurer | Un clic remet la page en français |
+
+L'extension fonctionne sur la page **non modifiée**, comme l'exige le règlement.
+
+### Le changement de langue à chaud
+
+L'utilisateur choisit une langue dans le popup ; la page est retraduite
+**immédiatement, sans rechargement**. Il peut enchaîner les six langues. Le
+moteur retrouve le français d'origine même s'il a perdu sa mémoire (page déjà
+traduite, extension rechargée), grâce à une table inverse construite sur toutes
+les langues.
+
+---
+
+## 3. Les six langues
+
+| Langue | Code | Libellés | Source principale |
+|---|---|---:|---|
+| Français | `fr` | 59 | Langue d'origine |
+| English | `en` | 59 | Paires fr/en officielles du site |
+| Ewondo | `ewo` | 59 | Corpus biblique `cameroon_bibles`, CC-BY-4.0 |
+| Fulfulde (Adamawa) | `ful` | 59 | Corpus biblique `cameroon_bibles`, CC-BY-4.0 |
+| Basaa | `bas` | 59 | Dictionnaire Njock 2019, SIL / Webonary |
+| Duala | `dua` | 62 | Wiktionnaire, vocabulaire biblique, ressources d'apprentissage |
+
+### Salutations retenues
+
+| Langue | « Bonjour » | Note |
+|---|---|---|
+| Ewondo | **Masug** | Variante citée : `Mbolo` ; formes horaires documentées |
+| Fulfulde | **Jam waali** | « As-tu passé la nuit en paix ? », réponse `Jam tan` |
+| Basaa | **Mɛ̀ ǹyega** | Polyvalent : bonjour / merci / respect |
+| Duala | **Idib'a bwam** | Littéralement « bon matin », usage général avant midi |
+
+---
+
+## 4. Sécurité et intégrité financière
 
 C'est le cœur du prototype. Le module `guard.js` refuse la traduction dès qu'un
 texte contient :
 
-| Signal | Exemple bloqué |
-|--------|----------------|
-| un chiffre | `10 000`, `25000` |
-| une devise | `FCFA`, `XAF` |
-| un symbole de numéro | `+237 6 57 41 67 60` |
-| une référence | `SNF-2026-0001`, `TRX-ABC-12` |
-| une date | `12/11/2026` |
-| un pourcentage | `+2,4 %`, `50 %` |
-| un email ou une URL | `contact@safinum.cm` |
+| Signal | Exemple bloqué | Résultat |
+|---|---|---|
+| Chiffre | `10 000`, `25 000` | 🔒 intact |
+| Devise | `FCFA`, `XAF`, `EUR`, `USD` | 🔒 intact |
+| Numéro | `+237 6 57 41 67 60` | 🔒 intact |
+| Référence | `SNF-2026-0001`, `TRX-2026-0001` | 🔒 intact |
+| Date | `12/11/2026`, `05 nov. 2026` | 🔒 intact |
+| Pourcentage | `+2,4 %`, `50 %` | 🔒 intact |
+| Email / URL | `contact@safinum.cm` | 🔒 intact |
+| Libellé seul | `Solde` | ✅ traduit |
+| Libellé + valeur | `Numéro de compte : SNF-…` | ✅ libellé traduit, valeur intacte |
 
-De plus, l'extension **ne touche jamais** aux zones de saisie
-(`input`, `textarea`, `select`, `contenteditable`) : les données du bénéficiaire
-saisies par l'utilisateur restent exactement telles quelles.
+Deux protections se superposent :
 
-**Résultat vérifié par les tests automatiques : 17 formats de valeurs financières
-sur 17 restent strictement intacts.**
+1. **Le garde-fou** bloque en amont ;
+2. **Le filet numérique** compare les nombres extraits avant et après
+   remplacement. Toute divergence annule la traduction.
+
+Enfin, l'extension **ne touche jamais** aux zones de saisie (`input`,
+`textarea`, `select`, `contenteditable`) : les données du bénéficiaire restent
+exactement telles quelles.
+
+**Résultat vérifié** : sur la reproduction du DOM réel, les 12 valeurs
+financières restent strictement identiques ; 17 formats sont testés dans
+`test-core.js`.
 
 ---
 
-### 4. Provenance des traductions
+## 5. Provenance des traductions
 
-Le règlement sanctionne « le texte inventé ». Chaque terme a donc une source :
+Le règlement sanctionne « le texte inventé ». Chaque terme a donc une source
+traçable, documentée dans `docs/SOURCES.md` :
 
-| Langue | Source | Licence |
-|--------|--------|---------|
-| Ewondo | corpus biblique `cameroon_bibles` (Hugging Face) | CC-BY-4.0 |
+| Langue | Source | Licence / réserve |
+|---|---|---|
+| Ewondo | corpus biblique `flagship-ai/cameroon_bibles` (Hugging Face) | CC-BY-4.0 |
 | Fulfulde | même corpus, variante Adamawa | CC-BY-4.0 |
-| Basaa | Dictionnaire Njock (2019), SIL / Webonary, 23 283 entrées | © SIL |
+| Basaa | Dictionnaire Njock (2019), SIL / Webonary, 23 283 entrées | © SIL, pas de licence commerciale explicite |
+| Duala | Wiktionnaire, vocabulaire biblique, ressources d'apprentissage | sources non normatives |
+| English | paires fr/en du site | — |
 
-Le détail terme par terme, avec la référence du verset ou l'exemple du
-dictionnaire, figure dans `docs/SOURCES.md`.
+### Limite assumée et déclarée
 
-**Limite assumée et déclarée** : la terminologie mobile money moderne
-(« solde », « frais de service », « transaction ») est absente des corpus sources
-de 2019 et antérieurs. Les termes correspondants sont des **propositions**
-explicitement marquées `// à valider` dans le code. Ils devront être confirmés
-par des locuteurs natifs avant un déploiement réel.
+Aucun corpus disponible ne contient la **terminologie mobile money moderne** :
+solde, frais de service, transaction, bénéficiaire au sens bancaire. Ces
+concepts n'existaient pas dans les textes sources (Bible, dictionnaire de 2019).
 
----
+Les termes correspondants sont donc des **propositions** explicitement marquées
+`// à valider` dans le code. Ils devront être confirmés par des locuteurs natifs
+avant un déploiement réel.
 
-### 5. Accessibilité
-
-- Navigation au clavier : le popup est en HTML standard
-- Contrastes conformes dans l'interface de contrôle
-- Aucune régression visuelle : la mise en page du site est conservée
-- Les attributs `aria-label`, `title`, `placeholder` et `alt` sont traduits
+Cette limite est **déclarée**, plutôt que masquée par des traductions inventées.
 
 ---
 
-### 5 bis. Lecture vocale (accessibilité)
+## 6. Accessibilité
+
+- Popup en HTML standard, navigable au clavier.
+- Contrastes conformes dans l'interface de contrôle.
+- Aucune régression visuelle : la mise en page du site est conservée.
+- Les attributs `aria-label`, `title`, `placeholder` et `alt` sont traduits.
+- Un bilan **traduits / protégés / ignorés** rend l'action visible.
+- Un panneau **Diagnostic** explique précisément l'état de la page.
+
+### Lecture vocale
 
 Un module `tts.js` séparé ajoute une lecture à voix haute via l'API
-`speechSynthesis` du navigateur. Un bouton « 🔊 Écouter » est présent dans le
-popup et dans la démo.
+`speechSynthesis`. Boutons **🔊 Écouter** et **⏹ Stop** dans le popup et dans la
+démo.
 
-**Ce qu'il lit** : le texte déjà traduit de la page (libellés, titres, boutons).
-**Ce qu'il ne lit jamais** : les montants, numéros, dates et références, filtrés
-par le même garde-fou que la traduction.
-
-**Limite déclarée** : aucun navigateur ne fournit de voix pour l'ewondo, le
-fulfulde, le basaa ou le duala. La lecture utilise donc une voix française, qui
-prononce les lettres latines à la française (ɛ, ɔ, ŋ, ɓ, ɗ sont gérés par la
-plupart des voix). **La prononciation est indicative, pas authentique.**
-
-**Feuille de route** : intégrer un moteur TTS spécialisé (type Vambo AI pour le
-duala) pour une prononciation correcte. Le module `tts.js` est isolé précisément
-pour permettre ce remplacement sans toucher au moteur de traduction.
-
-### 6. Confidentialité
-
-- Aucune donnée collectée, stockée ou transmise
-- Aucun appel réseau
-- Une seule permission : `storage`, pour mémoriser la langue choisie
-- Conforme à la règle : « L'extension ne doit pas collecter, stocker ou
-  transmettre les données affichées »
+- **Ce qu'il lit** : le texte déjà traduit de la page.
+- **Ce qu'il ne lit jamais** : montants, numéros, dates, références — filtrés par
+  le même garde-fou.
+- **Limite déclarée** : aucun navigateur ne fournit de voix pour l'ewondo, le
+  fulfulde, le basaa ou le duala. La lecture utilise une voix française ; la
+  prononciation est **indicative, pas authentique**.
+- **Feuille de route** : moteur TTS spécialisé (type Vambo AI pour le duala). Le
+  module est isolé pour permettre ce remplacement sans toucher au moteur.
 
 ---
 
-### 7. Tests
+## 7. Confidentialité
+
+| Point | Réalité |
+|---|---|
+| Données collectées | **Aucune** |
+| Données stockées | **Aucune** (`storage` n'est pas demandé) |
+| Appels réseau | **Aucun** |
+| Traitement | Entièrement local, dans la page |
+| Permissions | `activeTab`, `scripting`, `tabs` |
+| Hôtes | `safinum.cm` et `www.safinum.cm` uniquement |
+
+Conforme à la règle : « L'extension ne doit pas collecter, stocker ou transmettre
+les données affichées ».
+
+---
+
+## 8. Tests
 
 ```bash
 npm install
@@ -122,33 +187,79 @@ npm test
 ```
 
 ```
-Résultat : 43 réussis, 0 échoués   ← garde-fou + dictionnaires
-Résultat : 39 réussis, 0 échoués   ← simulation de la page Safinum
+core 61 · engine 120 · page 46 · real-dom 49/65 textes
+counter 19 · cycle 6 · reload 9 · multilang 8/8
+switch 21 · TTS 19 · voix 9 · popup 9
 ```
 
-Les 39 tests d'intégration simulent la page réelle : 25 éléments traduits,
-toutes les valeurs financières intactes, les 7 messages d'erreur du site traduits
-dans les 3 langues.
+**327 vérifications, 0 échec.** Les tests couvrent :
+
+- les 17 formats financiers protégés ;
+- les 59 libellés dans les 6 langues ;
+- les textes composés (`Bonjour, Amina` → `Masug, Amina`) ;
+- les 6 langues enchaînées sans rechargement ;
+- la double injection du content script ;
+- une page déjà traduite par une version précédente ;
+- le cycle activer → restaurer → réactiver ;
+- la lecture vocale et la sélection de voix ;
+- le popup : `lastError`, version obsolète, rechargement automatique.
+
+Protocole manuel et détail des suites : `docs/TESTS.md`.
 
 ---
 
-### 8. Limites connues
+## 9. Démonstration en 2 minutes
 
-1. Traduction par correspondance de segments, non par compréhension du texte.
-   Un libellé absent du dictionnaire reste en français.
-2. Les messages d'erreur en basaa sont des propositions à valider.
-3. L'extension couvre la page `safinum.cm/hackathon-test` uniquement, comme demandé.
+1. Charger l'extension non empaquetée (`chrome://extensions/`).
+2. Ouvrir <https://safinum.cm/hackathon-test>.
+3. Ouvrir le popup → choisir **Ewondo**.
+   - La salutation devient `Masug, Amina`.
+   - `25 000 FCFA` et `SNF-2026-0001` sont **inchangés**.
+4. Choisir **Basaa** sans recharger.
+   - La page est retraduite immédiatement.
+5. Cliquer sur **Restaurer** : retour au français.
+6. Ouvrir **Diagnostic** : versions et état affichés.
+7. Cliquer sur **🔊 Écouter** : lecture des libellés traduits, sans les montants.
+
+Variante sans installation : ouvrir `demo.html` dans Chrome.
 
 ---
 
-### 9. Perspectives
+## 10. Limites connues
 
-- Ajout du duala dès qu'une source documentée sera disponible
-- Validation des propositions de néologismes avec des locuteurs natifs
-- Extension du dictionnaire à partir des retours d'usage
-- Intégration possible aux applications de mobile money réelles
+1. **Traduction par correspondance** de segments, non par compréhension. Un
+   libellé absent du dictionnaire reste en français.
+2. **Terminologie mobile money** : propositions à valider par des locuteurs
+   natifs.
+3. **Basaa et duala** : certaines entrées sont des néologismes proposés,
+   signalés `// à valider`.
+4. **Lecture vocale** : prononciation indicative, faute de voix locales.
+5. **Périmètre** : `safinum.cm` uniquement, conformément au hackathon.
+6. **Chargement à chaud** : Chrome ne remplace pas un content script déjà
+   chargé. Le popup détecte la version obsolète et recharge l'onglet une fois.
 
 ---
 
-**Outils déclarés** : Chrome Extension API (Manifest V3), JavaScript natif,
-`jsdom` pour les tests. Aucun modèle d'IA, aucun service externe.
+## 11. Perspectives
+
+- Validation des propositions lexicales avec des locuteurs natifs (ewondo,
+  fulfulde, basaa, duala).
+- Intégration d'un moteur TTS spécialisé.
+- Variantes de salutation selon le moment de la journée (déjà documentées).
+- Extension du dictionnaire à partir des retours d'usage.
+- Réutilisation du moteur pour d'autres interfaces financières camerounaises.
+
+---
+
+## 12. Outils déclarés
+
+- Chrome Extension API — Manifest V3
+- JavaScript natif, sans framework
+- `jsdom` pour les tests
+- Aucun modèle d'IA, aucun service externe, aucun appel réseau
+
+---
+
+**Dépôt** : <https://github.com/darelle-kameni/mera-extension-safinum>
+**Version présentée** : 1.2.2
+**Licence du code** : MIT
